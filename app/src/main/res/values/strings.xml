@@ -1,3 +1,4 @@
 <resources>
+    <string name="article_image_description">This is an image associated with the News Article</string>
     <string name="app_name">DevFest18</string>
 </resources>
