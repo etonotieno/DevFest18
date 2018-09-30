@@ -30,15 +30,16 @@ import com.gdgnairobi.devfest18.data.model.News
 import com.gdgnairobi.devfest18.databinding.ItemLayoutBinding
 import com.gdgnairobi.devfest18.utils.BindableListAdapter
 
-class NewsAdapter(private val lifecycleOwner: LifecycleOwner) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(),
-        BindableListAdapter<LiveData<List<News>>> {
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>(),
+        BindableListAdapter<List<News>> {
 
     private var newsList = emptyList<News>()
 
-    override fun setData(data: LiveData<List<News>>?) {
-        data?.observe(lifecycleOwner, Observer {
+    override fun setData(data: List<News>?) {
+        data?.let {
             newsList = it
-        })
+            notifyDataSetChanged()
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
