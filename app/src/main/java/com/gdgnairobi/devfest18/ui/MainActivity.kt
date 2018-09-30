@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gdgnairobi.devfest18.R
 import com.gdgnairobi.devfest18.databinding.MainActivityBinding
+import net.danlew.android.joda.JodaTimeAndroid
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        JodaTimeAndroid.init(this)
         mainBinding.viewModel = newsViewModel
         mainBinding.setLifecycleOwner(this)
 
