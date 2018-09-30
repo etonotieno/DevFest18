@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         mainBinding.setLifecycleOwner(this)
 
         mainBinding.mainActivityRecyclerView.apply {
-            adapter = NewsAdapter(this@MainActivity)
+            adapter = NewsAdapter()
             layoutManager = LinearLayoutManager(this@MainActivity)
         }
     }
