@@ -9,11 +9,13 @@ import com.squareup.picasso.Picasso
 
 object BindingAdaptersUtils {
 
+    @JvmStatic
     @BindingAdapter(value = ["image", "placeholderImage", "errorImage"], requireAll = true)
     fun loadImageForView(view: ImageView, imageUrl: String, errorImage: Drawable, placeholderImage: Drawable) {
         Picasso.get().load(imageUrl).placeholder(placeholderImage).error(errorImage).into(view)
     }
 
+    @JvmStatic
     @BindingAdapter("listData")
     fun <T> setListData(view: RecyclerView, data: T) {
         val adapter = view.adapter
@@ -22,6 +24,7 @@ object BindingAdaptersUtils {
         }
     }
 
+    @JvmStatic
     @BindingAdapter("timeString")
     fun setTimeString(view: TextView, date: String) {
         view.text = DateUtils.getPrettifiedTimeString(date)
